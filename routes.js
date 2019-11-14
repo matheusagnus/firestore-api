@@ -4,6 +4,7 @@ const User = require('./functions/user')
 
 const routes = express.Router();
 
+routes.all('/user', User.middleware);
 routes.get('/user', User.index);
 routes.post('/user', User.store);
 routes.get('/user/:uid', User.show);

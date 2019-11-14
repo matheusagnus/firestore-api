@@ -13,6 +13,11 @@ admin.initializeApp({
 const ref = admin.firestore().collection('users');
 
 module.exports = {
+    // middleware
+    async middleware(req, res, next) {
+        console.log('Validação de rotas!')
+        next();
+    },
     // create a new user
     async store(req, res) {
         const user = req.body;
